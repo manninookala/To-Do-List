@@ -1,0 +1,17 @@
+<section>
+    <ul class="container my-12 bg-white w-auto h-auto p-2 rounded-md">
+        <li class="mx-4 my-2 border-gray-300 border-[1.6px] p-3 rounded-md font-medium font-mono " *ngFor="let todo of todos;index as i" [ngStyle]="{ 'text-decoration': strikeOff ? 'line-through' : 'none' }">{{todo.task}}
+            <div class="float-right">
+                <button class="material-symbols-rounded cursor-pointer text-white bg-green-500 rounded-md px-[4px] py-[2px]  hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 active:bg-green-600 mr-3"(click)="strikeOff = !strikeOff">
+                    done
+                </button>
+                <button class=" cursor-pointer material-symbols-outlined text-white bg-purple-600 rounded-md px-[4px] py-[2px]  hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 active:bg-purple-800" (click)="deleteItem(i)">
+                    delete
+                </button>
+                
+            </div>
+            
+        </li>
+
+    </ul>
+</section>
